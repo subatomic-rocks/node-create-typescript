@@ -66,6 +66,7 @@ async function main () {
   const configUser = require(path.join(process.cwd(), 'package.json'));
 
   // Appends updated values
+  configUser.main = configBase.main || configUser.main;
   configUser.scripts = configBase.scripts || {};
   configUser.dependencies = configBase.dependencies || {};
   configUser.devDependencies = configBase.devDependencies || {};
