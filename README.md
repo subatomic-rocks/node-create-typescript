@@ -7,4 +7,4 @@ Run `npm start` to automatically build and start the application or `npm run bui
 
 ## Usage
 
-Just `npm init your-project-name @subatomic-rocks/typescript` to create a project using the template.
+Just go into your project directory and `npm init @subatomic-rocks/typescript` to create a project using the template.

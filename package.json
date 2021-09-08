@@ -1,16 +1,24 @@
 {
   "name": "@subatomic-rocks/create-typescript",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "",
+  "bin": {
+    "create-typescript": "installer.js"
+  },
   "scripts": {
     "start": "npm run build && node dist/main.js",
     "build": "npx tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": {
+    "name": "Matheus Pratta",
+    "email": "eu@matheus.io",
+    "url": "https://github.com/MatheusMK3"
+  },
   "license": "ISC",
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",
+    "@types/node": "^16.9.0",
     "typescript": "^4.4.2"
   }
 }
