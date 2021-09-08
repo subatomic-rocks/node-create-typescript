@@ -1,7 +1,8 @@
 {
   "name": "@subatomic-rocks/create-typescript",
-  "version": "0.3.0",
-  "description": "",
+  "version": "0.3.1",
+  "description": "Just a simple TypeScript template",
+  "main": "index.js",
   "bin": {
     "create-typescript": "installer.js"
   },
