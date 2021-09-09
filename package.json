@@ -1,6 +1,6 @@
 {
   "name": "@subatomic-rocks/create-typescript",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "Just a simple TypeScript template",
   "main": "index.js",
   "bin": {
@@ -19,9 +19,9 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "@tsconfig/recommended": "^1.0.1",
-    "@types/node": "^16.9.0",
-    "ts-node-dev": "^1.1.8",
-    "typescript": "^4.4.2"
+    "@tsconfig/recommended": "latest",
+    "@types/node": "latest",
+    "ts-node-dev": "latest",
+    "typescript": "latest"
   }
 }

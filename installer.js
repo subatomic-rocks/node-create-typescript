@@ -16,9 +16,17 @@ const IGNORE = [
 ];
 
 // Run command as Promise
-function run (command) {
+function run (command, withStdIO) {
   return new Promise((resolve) => {
-    exec(command, resolve);
+    // Starts command
+    const proc = exec(command, resolve);
+
+    // Optionally pipes stdio too
+    if (withStdIO) {
+      process.stdin.pipe(proc.stdin);
+      proc.stdout.pipe(process.stdout);
+      proc.stderr.pipe(process.stderr);
+    }
   });
 }
 
@@ -59,7 +67,7 @@ async function copy (srcPath, dstPath) {
 async function main () {
   // Runs standard init
   console.info('Preparing project...');
-  await run('npm init --yes');
+  await run('npm init', true);
 
   // Loads base and user configs
   const configBase = require(path.join(__dirname, 'package.json'));
@@ -78,7 +86,7 @@ async function main () {
   );
 
   // Copies stuff on main directory except this file
-  console.info('Copying files...');
+  console.info('Copying template files...');
   await Promise.all(
     (await fs.readdir(__dirname))
       .filter((entry) => !~IGNORE.indexOf(entry))
@@ -88,9 +96,9 @@ async function main () {
       ))
   );
 
-  // Runs NPM install
+  // Installs dependencies etc
   console.info('Installing dependencies...');
-  await run('npm install');
+  await run('npm install', true);
 
   // Stop here!
   console.info('Done!');
